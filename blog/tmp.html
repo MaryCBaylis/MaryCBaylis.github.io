@@ -1,0 +1,109 @@
+<html>
+<body>
+
+
+Using CSS to Torture Mice, Because Why Not?
+
+"You know what, Mac? You're right. I didn't like Cheese. I had difficulty tolerating Cheese. And as far as I could tell, nobody else really had a taste for Cheese, either. Except the mice. Mice like Cheese. "
+-Bloo, Foster's Home For Imaginary Friends
+
+<p>Let's say you've got an adorable mouse:</p>
+
+<p>
+<img src="imgs/Mouse.png" alt="Mouse"/>
+<br/>Hello!
+</p>
+
+<p>And you've got some yummy cheese:</p>
+
+<p>
+	<img src="imgs/Cheese.png" alt="Cheese"/>
+<br/>... (Cheese can't talk!)
+</p>
+
+<p>And now let's say you need the two of them in the same line in an html document:</p>
+
+<p>
+```
+	<html>
+	<body>
+		<img src="imgs/Cheese.png"/>
+		<img src="imgs/Mouse.png"/>
+	</body>
+	</html>
+```
+</p>
+
+<p>Then you get this:</p>
+
+	<p>
+		<img src="imgs/Cheese.png"/>
+		<img src="imgs/Mouse.png"/>
+		<br/>Whoa, there, mouse!  We all know your issues with self control!  We need that cheese for our demonstration today!
+	</p>
+
+<p>Fortunately, we can use simple CSS to seperate the two.  In fact, there are several ways to push them around once we've enclosed them in blocks in a css class, like so:</p>
+
+<p>
+	<pre><code>
+		.blocked {
+	display: block;
+	}
+	</code></pre>
+</p>
+
+<p>Now we just assign the class to the mouse and cheese in a <pre><div></pre> tag, like so:</p>
+
+</p><pre><code>
+<html>
+<body>
+	<div class = "blocked">
+	<img src="imgs/Cheese.png">
+	</div>
+	<div>
+	<img src="imgs/Mouse.png">
+	</div>
+</body>
+</html>
+</code></pre></p>
+
+<p>And voila!  They're seperated!</p>
+
+<div class="blocked1">
+	<img src="imgs/Cheese.png" alt="Cheese!">
+</div>
+<div class = "blocked1">
+	<img src="imgs/Mouse.png" alt="Mouse!">
+</div>
+
+<p>But wait, you say, we wanted them on the same line!  You make a good point.  We'll need to change our blocked class so that they're both enclosed in inline-blocks, like so:</p>
+
+<p>
+	<pre><code>
+		.blocked {
+		display: inline-block;
+	}
+</code></pre>
+</p>
+
+<p>Since we've already assigned the class to the mouse and cheese, we don't need to make any changes to the html.  Now that gets us this:</p>
+
+<p>
+<div class="blocked2">
+	<img src="imgs/Cheese.png" alt="Cheese!">
+</div>
+<div class = "blocked2">
+	<img src="imgs/Mouse.png" alt="Mouse!">
+</div>
+</p>
+
+<p>Darnit!  That mouse is at it again!  We're going to need to use CSS to alter the inline-blocks to push the two apart.  Again, CSS gives us several ways to do this, each with their own subtle effects.</p>
+
+<p><h1>Elements of a block</h1></p>
+
+<p>The margin is the area surrounding the block.
+
+
+
+</body>
+</html>
