@@ -1,0 +1,40 @@
+.container {
+	width: 70%;
+	margin: auto;
+}
+
+.post-image {
+	position: relative;
+	float: left;
+	/*margin: 14px;*/
+	left: -100px;
+	background-color: red;
+	margin-right: -86px;
+}
+
+.post-title {
+	text-align: center;
+	font-family: "Lucida Sans Unicode";
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.post-subtitle {
+	text-align: center;
+	font-family: "Lucida Sans Unicode";
+	font-size: 20px;
+	font-style: italic;
+}
+
+.post-content {
+	font-family: "Lucida Sans Unicode";
+	font-size: 14px;
+	text-align: justify;
+	text-justify: distribute;
+}
+
+.post-date {
+	text-align: right;
+	font-family: "Lucida Sans Unicode";
+	font-size: 12px;
+}
