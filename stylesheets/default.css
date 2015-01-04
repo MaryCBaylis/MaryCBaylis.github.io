@@ -1,0 +1,131 @@
+body {
+	/*background-color: gray;*/
+	/*background-color: #ADFFFC;*/
+	/*background-color: #BFFFFA;*/
+	background-image: url("../imgs/birdbar.png");
+	margin: 0px;
+	min-height: 600px;
+}
+
+#wrapper {
+	min-height: 700px;
+	position: relative;
+}
+
+.header {
+	position: absolute;
+	/*width: 100%;
+	margin-right: auto;
+	margin-left: auto;*/
+	left: 10%;
+	right: 10%;
+}
+
+#logo {
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	border: 2px none gray;
+	border-radius: 100%;
+	background-image: url("http://www.gravatar.com/avatar/b4325c1bc35be23516d21af2103d7b8d?s=200");
+	z-index: 3;
+}
+
+#name {
+	/*margin: auto;*/
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	/*font-family: Impact;*/
+	font-size: 40px;
+	width: 600px;
+
+}
+
+/*I have some work to do on my buttons*/
+#navigationBar {
+	display: inline-block;
+	position: absolute;
+	left: 100px;
+	top: 125px;
+	width: 80%;
+	height: 50px;
+	/*background-color: #E2FFCC;*/
+	background-color: #3ED2B6;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	vertical-align: middle;
+	z-index: -1;
+	padding: 10px;
+	border: 2px none gray;
+	border-radius: 10px;
+}
+
+#navigationLinks {
+	display: inline-block;
+	position: absolute;
+	left: 100px;
+	top: 135px;
+	width: 80%;
+	height: 50px;
+	/*background-color: #E2FFCC;*/
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	vertical-align: middle;
+	z-index: 1;
+	padding: 10px;
+	/*border: 2px none gray;*/
+	/*border-radius: 10px;*/
+}
+
+.sidebar {
+	position: relative;
+	float: left;
+	width: 200px;
+	/*margin: 14px;*/
+	left: -100px;
+	background-color: #FFE98F;
+	margin-right: -86px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.sidebar-title {
+	text-align: center;
+}
+
+#footer {
+	/*display: block;*/
+	/*position: relative;*/
+	width: 100%;
+	/*position: fixed;*/
+	/*bottom: 0px;*/
+	/*left: 0px;*/
+	/*margin: auto;*/
+	/*float: bottom;
+	clear: both;
+	*/
+	top: 100%;
+	min-height: 20px;
+	position: relative;
+	position: absolute;
+}
+
+#contentContainer {
+	position: absolute;
+	background-color: white;
+	/*border: 2px none gray;
+	border-radius: 10px;*/
+	width: 100%;
+	margin:: auto;
+	top: 195px;
+	min-height: 300px;
+	/*left: 100px;*/
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	margin-bottom: 100px;
+	z-index: 2;
+}

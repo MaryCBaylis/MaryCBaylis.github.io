@@ -1,14 +1,15 @@
 .container {
 	width: 70%;
 	margin: auto;
+	padding: 30px;
 }
+
 
 .post-image {
 	position: relative;
 	float: left;
 	/*margin: 14px;*/
 	left: -100px;
-	background-color: red;
 	margin-right: -86px;
 }
 
@@ -20,10 +21,17 @@
 }
 
 .post-subtitle {
-	text-align: center;
 	font-family: "Lucida Sans Unicode";
 	font-size: 20px;
 	font-style: italic;
+	margin-top: 20px;
+}
+
+.post-quote-source {
+	font-size: 20px;
+	font-family: "Lucida Sans Unicode";
+	margin-bottom:20px;
+	text-align:  right;
 }
 
 .post-content {
@@ -38,3 +46,6 @@
 	font-family: "Lucida Sans Unicode";
 	font-size: 12px;
 }
+
+
+

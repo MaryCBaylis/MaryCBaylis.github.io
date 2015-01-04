@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/blocked.css">
+<title>Mary C Baylis' Blogomania!</title>
+</head>
+<body>
+
+
+<div class="header">
+<div id="logo">
+  <!--This is me!  Though I'd prefer a graphical representation... -->
+  <!--<a href="index.html"><img src="http://www.gravatar.com/avatar/b4325c1bc35be23516d21af2103d7b8d?s=200" alt="Profile Picture"/></a>-->
+</div>
+
+<div id="name">Mary C Baylis</div>
+
+<div id="navigationBar">
+  <!--This is the navigation stuff-->
+  <!--<a href="index.html">About Me</a>
+  <a href="#">Blog</a>
+  <a href="#">Projects</a>
+  <a href="#">Contact</a>
+-->
+</div>
+
+<div id="navigationLinks">
+   <a href="../index.html">About Me</a>
+  <a href="#">Blog</a>
+  <a href="#">Projects</a>
+  <a href="#">Contact</a>
+  </div>
+</div>
+
+<div id="contentContainer">
+  <div class="container">
+
+  <div class="sidebar">
+<div class="sidebar-title">Blog Posts</div>
+<!--Fill in blog post links here-->
+<ul>
+  <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
+  <li><a href="c1-chefs-kitchen.html">Kitchens and Chefs and Cheating.  Oh My.</a></li>
+  <li><a href="t2-css-design.html">Torturing Mice with CSS.  Because Why Not?</a></li>
+</ul>
+
+  </div>
+  <div class="post-image"><!--Image goes here--></div>
+  <div class="post-title">Torturing Mice with CSS.  Because Why Not?</div>
+  <div class="post-subtitle">"You know what, Mac? You're right. I didn't like Cheese. I had difficulty tolerating Cheese. And as far as I could tell, nobody else really had a taste for Cheese, either. Except the mice. Mice like Cheese. "</div>
+<div class="post-quote-source">-Bloo, Foster's Home For Imaginary Friends</a></div>
+
+
+  <div class="post-content">
+ 
+<p>Let's say you've got an adorable mouse:</p>
+
+<p>
+  <div class="imgContainer">
+<img src="imgs/Mouse.png" alt="Mouse"/>
+
+</div>
+
+</p>
+
+<p>And you've got some yummy cheese:</p>
+
+<p>
+    <div class="imgContainer">
+  <img src="imgs/Cheese.png" alt="Cheese"/>
+</div>
+</p>
+
+<p>And now let's say you need the two of them in the same line in an html document.  You'd write up something like the following:</p>
+
+<p>
+    <div class="imgContainer">
+<pre><code>
+  &lt;html&gt;
+  &lt;body&gt;
+    &lt;img src="imgs/Cheese.png"/&gt;
+    &lt;img src="imgs/Mouse.png"/&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+</div>
+</p>
+
+<p>Then you get this:</p>
+
+  <p>
+    <img src="imgs/Cheese.png" alt="cheese" />
+    <img src="imgs/Mouse.png" alt="mouse" />
+    <br/>Whoa, there, mouse!  We all know your issues with self control!  We need that cheese for our demonstration today!
+  </p>
+
+<p>Fortunately, we can use simple CSS to separate the two.  In fact, there are several ways to push them around once we've defined them with a css class, like so:</p>
+
+<p>
+  <pre><code>
+    .blocked {
+  display: block;
+  }
+  </code></pre>
+</p>
+
+<p>Now that we've defined the class, we just assign the class to the mouse and cheese in a &lt;div&gt; tag, like so:</p>
+
+<p><pre><code>
+&lt;html&gt;
+&lt;body&gt;
+  &lt;div class = "blocked"&gt;
+  &lt;img src="imgs/Cheese.png"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+  &lt;img src="imgs/Mouse.png"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></p>
+
+<p>And voila!  They're separated!</p>
+
+<div class="blocked1">
+  <img src="imgs/Cheese.png" alt="Cheese!">
+</div>
+<div class = "blocked1">
+  <img src="imgs/Mouse.png" alt="Mouse!">
+</div>
+
+<p>But wait, you say, we wanted them on the same line!  You make a good point.  We'll need to change our blocked class so that they're both enclosed in inline-blocks.  Inline-blocks are pretty much blocks that don't expand to take up the entire row, and will allow other blocks on the same line.  We'd edit our blocked class like so:</p>
+
+<p>
+  <pre><code>
+  .blocked {
+    display: inline-block;
+  }
+</code></pre>
+</p>
+
+<p>Since we've already previously assigned the blocked class to the mouse and cheese, we don't need to make any changes to the html.  That's part of the charm of CSS!  After editing the blocked class, we get this:</p>
+
+<p>
+<div class="blocked2">
+  <img src="imgs/Cheese.png" alt="Cheese!">
+</div>
+<div class = "blocked2">
+  <img src="imgs/Mouse.png" alt="Mouse!">
+</div>
+</p>
+
+<p>Darnit!  That mouse is at it again!  We're going to need to use CSS to alter the inline-blocks to push the two apart.  Again, CSS gives us several ways to do this, each with their own subtle effects.</p>
+
+<p>To do this, we need to understand the elements that make up blocks. See the diagram (obtained from <a href="http://www.w3.org/">www.w3.org</a>) below:</p>
+
+<p>
+<img src="imgs/MPBexample.png" alt="Block Diagram" />
+</p>
+
+<p>The margin is the area surrounding the block.  The border is pretty self-explanatory; it's the border around the edge of the block!  The padding is the area that seperates the border from the content of the block.</p>
+
+<p><h1>Margins</h1></p>
+
+<p>To make it a little easier to see the changes we are making to our blocks, let's add some color to the block with the following code added to our css class, blocked:</p>
+
+<p><pre><code>
+.blocked {
+  display: inline-block;
+  background-color: red;
+}
+</code></pre></p>
+
+<p>Now let's see what our mouse and cheese are up to:<p>
+
+<p>
+  <div class="blocked3">
+    <img src="imgs/Cheese.png" alt="Our Mouse" />
+  </div>
+  <div class="blocked3">
+    <img src="imgs/Mouse.png" alt="Our Cheese" />
+  </div>
+</p>
+
+<p>Perfect!  Now that we can see the blocks, let's first try to separate the mouse from the cheese by exploring margins.  We can change the size of a blocks margin by editing the blocked class in CSS, as shown below:</p>
+
+<p>
+  <pre><code>
+  .blocked {
+  display: inline-block;
+  background-color: red;
+  margin: 0px 50px 0px 50px;
+}
+</code></pre>
+</p>
+
+<p>The four values we entered for margin are, in order from left to right, the number of pixels we'd like for the top margin, followed by the right margin, then the bottom margin, finally followed by the left margin.  It pretty much starts at the top and moves clockwise.  In the code above, we've requested a 20 pixel margin for the left and right margins, and no margins for the top and bottom.  Let's see what we have now:</p>
+
+<p>
+  <div class="blocked4">
+    <img src="imgs/Cheese.png" alt="Still Cheese" />
+  </div>
+  <div class="blocked4">
+    <img src="imgs/Mouse.png" alt="Still a Mouse" />
+  </div>
+</p>
+
+<p>Notice how the area outside of the blocks has increased on both their left and right, pushing the mouse away from the cheese!</p>
+
+<p><h1>Borders</h1></p>
+
+<p>We can also try to separate the two using borders, either in addition to or instead of margins.  We can add a border to our blocked class in CSS with the following code:</p>
+
+<p>
+  <pre><code>
+    .blocked {
+    display: inline-block;
+    background-color: red;
+    border: 10px solid blue;
+  }
+</code></pre>
+</p>
+
+<p>The first entry for our border is the thickness of the border.  The border produced by the border above will be 10 pixels thick.  the second entry is the style of border we'd like to see.  We want to contain that mouse so we're going with a solid border, but if you want to get fancy, you can always try a dotted or dashed border.  The final entry is the color of the border.  It's pretty obvious, but our border should be blue.  Let's see what changes this code makes to our blocks:</p>
+
+<p>
+  <div class="blocked5">
+    <img src="imgs/Cheese.png" alt="CHEESE" />
+  </div>
+  <div class="blocked5">
+    <img src="imgs/Mouse.png" alt="MOUSE" />
+  </div>
+</p>
+
+<p>Presto!  The cheese is saved by the thin blue line!</p>
+
+<p><h1>Padding</h1></p>
+
+<p>The final way we can edit our blocks to save our cheese is by editing the padding of the block.  If you'll remember, the padding is the area between the border and the content of the block.  If we want to change the padding, we can enter the following code in the blocked class in our CSS:</p>
+
+<p>
+  <pre><code>
+    .blocked {
+    display: inline-block;
+    background-color: red;
+    padding: 10px 50px 10px 50px;
+  }
+</code></pre>
+</p>
+
+<p>Our entries for padding are very similar to our entries for margins.  The first entry is the size in pixels for the top padding, followed by the right, bottom, and left.  In this example, we'll have a 10 pixel padding on the top and bottom and a 50 pixel padding on both the left and the right.Check it out:</p>
+
+<p>
+  <div class="blocked6">
+    <img src="imgs/Cheese.png" alt="OMG it's cheese!" />
+  </div>
+  <div class="blocked6">
+    <img src="imgs/Mouse.png" alt="And it's mouse!" />
+  </div>
+</p>
+
+<p>Notice how our mouse and cheese are both further from the edge of their blocks? Once again, our mouse is thwarted!</p>
+
+<p>Now let's put all three together for maximum cheese security!</p>
+
+<p>
+  <pre><code>
+    .blocked {
+    display: inline-block;
+    background-color: red;
+    margin: 0px 50px 0px 50px;
+    border: 20px solid blue;
+    padding: 10px 50px 10px 50px;
+  }
+</code></pre>
+</p>
+
+<p>Behold!  That is one safe cheese!</p>
+
+<p>
+  <div class="blocked7">
+    <img src="imgs/Cheese.png" alt="OMG it's cheese!" />
+  </div>
+  <div class="blocked7">
+    <img src="imgs/Mouse.png" alt="And it's mouse!" />
+  </div>
+</p>
+
+<p>Mwahaha!  Not this time, mouse!</p>
+
+<p id="spacedBreak"></p>
+<p>...</p>
+
+<p>Sorry about that, little guy.  We're all done here.  Here you go!</p>
+
+<p>
+
+
+
+  <div class="blocked2">
+    <img src="imgs/LoveCheese.png" alt="Poor cheese!" />
+  </div>
+
+  <div class="unblocked">
+    <img src="imgs/Mouse.png" alt="Yay mouse!" />
+  </div>
+
+  </p>
+
+
+  </div>
+    <div class="post-date"><!--Date goes here--></div>
+
+</div>
+
+ <div id="footer">
+ 
+  </div>
+  </div>
+
+
+<!--
+<div id="footer">
+  <!--This stuff should be in the footer-->
+  <!--DOESNT WORK!  ARGH!
+  <a href="https://twitter.com/MCBaylis" class="twitter-follow-button" data-show-count="false">Follow @MCBaylis</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+-->
+
+<!--Facebook button.  Code copied from them.-->
+
+<!--DOESN'T WORK!  ARGH!
+<div class="fb-follow" data-href="https://www.facebook.com/mcbaylis" data-colorscheme="light" data-layout="button" data-show-faces="true"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+-->
+<!--
+test
+
+</div>
+-->
+
+</body>
+</html>
+
