@@ -1,0 +1,20 @@
+/* include your css here */
+
+.header{
+            font-family: "lucida sans unicode";
+            text-align: center;
+            }
+
+.wrap{
+            border: 2px solid black;
+            height: 300px;
+        }
+
+.column{
+            border: 1px solid black;
+            display: inline-block;
+            float: left;
+            height: 100%;
+            width: 30%;
+            margin: auto;
+        }
