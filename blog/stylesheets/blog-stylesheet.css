@@ -4,6 +4,13 @@
 	padding: 30px;
 }
 
+ code {
+  	display: block;
+  	background-color: #d3d3d3;
+    padding-bottom: 5px;
+    white-space: pre-wrap;
+  }
+
 
 .post-image {
 	position: relative;
