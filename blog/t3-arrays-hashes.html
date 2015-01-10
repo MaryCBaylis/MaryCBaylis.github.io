@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css">
+<title>Mary C Baylis' Blogomania!</title>
+</head>
+<body>
+
+<div class="header">
+<div id="logo">
+  <!--This is me!  Though I'd prefer a graphical representation... -->
+  <!--<a href="index.html"><img src="http://www.gravatar.com/avatar/b4325c1bc35be23516d21af2103d7b8d?s=200" alt="Profile Picture"/></a>-->
+</div>
+
+<div id="name"></div>
+
+<div id="navigationBar">
+  <!--This is the navigation stuff-->
+  <!--<a href="index.html">About Me</a>
+  <a href="#">Blog</a>
+  <a href="#">Projects</a>
+  <a href="#">Contact</a>
+-->
+</div>
+
+<div id="navigationLinks">
+   <a href="../index.html">About Me</a>
+  <a href="#">Blog</a>
+  <a href="#">Projects</a>
+  <a href="#">Contact</a>
+  </div>
+</div>
+
+<div id="contentContainer">
+  <div class="container">
+
+  <div class="sidebar">
+<div class="sidebar-title">Blog Posts</div>
+<!--Fill in blog post links here-->
+<ul>
+  <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
+  <li><a href="c1-chefs-kitchen.html">Kitchens and Chefs and Cheating.  Oh My.</a></li>
+  <li><a href="t2-css-design.html">Torturing Mice with CSS.  Because Why Not?</a></li>
+  <li><a href="t3-arrays-hashes.html">Arrays, Hashes, and Firey Infernos</a></li>
+</ul>
+
+  </div>
+  <div class="post-image"><!--Image goes here--></div>
+  <div class="post-title">Arrays, Hashes, and Firey Infernos</div>
+  <div class="post-subtitle">"Where's Cosgrove?! You were supposed to hold his hand! That's the whole point of THE BUDDY SYSTEM!"</div>
+  <div class="post-quote-source">Freakazoid</div>
+
+
+  <div class="post-content">
+
+<p>
+  Ah, collection classes.  What would object-oriented programming be without them?  A lot harder.  And I mean a whole lot harder.  Like you would have to write programs for every instance of every amount of input a user can give you, or you could severely cripple your code. Your call.
+</p>
+
+<p>
+  No worries, though.  We have arrays to help out. Arrays are collections in object-oriented languages, like Ruby, that pretty much act as numbered lists.  The one-dimensional ones, anyways, which is all we'll be dealing with today.  These lists start at 0 and go up to whatever number your heart desires (or whatever number your processor can handle before bursting into flames. Or tears. Or flaming tears. Sweet.)
+</p>
+
+<p>
+  Let's take a look at one now. First, you instantiate your array with a call like this:
+</p>
+
+<p><pre><code>
+  to_do_list = ['make breakfast', 'laundry', 'increment a number by 1 forever until flaming tears come streaming out from my computer', dishes]
+</code></pre></p>
+
+<p>
+  And that's it.  They're pretty simple to make.  You just give it a name, like to_do_list in our example, and fill the [] brackets with all of the items you want in it.  We can print out array and receive a list by doing the following:
+</p>
+
+<p><pre><code>
+  puts to_do_list
+</code></pre></p>
+
+<p>And that gets us this:</p>
+
+<p><pre><code>
+  make breakfast
+  laundry
+  increment a number by 1 forever until flaming tears come streaming out from my computer
+  dishes
+</code></pre></p>
+
+<p>
+  If we want to retrieve a single item from the array, we make a call like so:
+</p>
+
+<p><pre><code>
+  to_do_list [1]
+</code></pre></p>
+
+<p>
+  What we're asking our code to do here is to return the value at index 1, which is:
+</p>
+
+<p><pre><code>
+  laundry
+</code></pre></p>
+
+<p>
+  Hooray for laundry!  Well, for laundry being the vaue retreived from our array!
+</p>  
+
+<p>
+  Simple, right? One-dimensional arrays are perfect for ordered lists.  They're not so great for pairs, though...
+
+</p>
+
+<p>
+    Let's say you wanted to take some friends on a field trip, and since it's always dangerous to go alone, you're using the buddy system.  You make yourself an array of all of your friends and try to group them together by their buddy:
+</p>
+
+<p><pre><code>
+  field_trip_buddies = ['Mario', 'Princess Peach', 'Luigi', 'Ganon', 'Zelda', 'Link', 'Sonic', 'Tails']
+</code></pre></p>
+
+<p>
+  That's going to be one amazing field trip.  And everyone's next to their buddy! We've got Princess Peach and Mario, and we've got Sonic and Link, and we've got Zelda and Ganon... and Luigi and Princess Peach... wait... this could get awkward. When we're in the middle of our list, we have no idea of knowing who's with whom.
+</p>
+
+<p>
+  Cue the entrance of our hero, the hash.  A hash is a collection of pairs in most object-oriented languages, again like Ruby.  To get to know this unlikely hero, let's first make one using our field trip example:
+</p>
+
+<p><pre><code>
+  field_trip_buddies = ['Mario' => 'Princess Peach', 'Luigi' => 'Ganon', 'Zelda' => 'Link', 'Sonic' => 'Tails']
+</code></pre></p>
+
+<p>
+  There. Now everyone should be all snug with their buddy.  Well, paired with them, anyways.  Now if we want to find out who's paired with Mario, we can make the following call:
+</p>
+
+<p><pre><code>
+  puts field_trip_buddies[Mario]
+</code></pre></p>
+
+<p>
+  And we get...
+</p>
+
+<p><pre><code>
+  Princess Peach
+</code></pre></pr>
+
+<p>
+  No surprises there; we always kind of knew she'd end up with him.  And who does Luigi get for his buddy?
+</p>
+
+<p><pre><code>
+  puts field_trip_buddies[Luigi]  
+</code></pre></p>
+
+<p><pre><code>
+  Ganon
+</p></pre></code>
+
+<p>
+  Huh... Well, I've seen stranger ships in fanfics.  And it works!  Now there's no question about who's holding whose hand as we all file off the bus.
+</p>
+
+<p>
+  So that about wraps it up.  Arrays are great for lists, especially ordered ones.  Hashes are better for pairs that don't really need an order.  Now if you'll excuse me, I need to get to index 3 on my todo list asap.
+</p>
+
+<p><pre><code>
+def burn_baby_burn
+  count_til_you_die = 0
+
+  while true
+    count_til_you_die += 1
+  end
+end
+</p></pre></code>
+
+  </div>
+    <div class="post-date">January 9, 2015</div>
+
+</div>
+<div id="footer">
+
+
+</div>
+  </div>
+
+</body>
+</html>
+
