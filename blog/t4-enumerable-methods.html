@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css">
+<title>Mary C Baylis' Blogomania!</title>
+</head>
+<body>
+
+<div class="header">
+<div id="logo">
+  <!--This is me!  Though I'd prefer a graphical representation... -->
+  <!--<a href="index.html"><img src="http://www.gravatar.com/avatar/b4325c1bc35be23516d21af2103d7b8d?s=200" alt="Profile Picture"/></a>-->
+</div>
+
+<div id="name"></div>
+
+<div id="navigationBar">
+  <!--This is the navigation stuff-->
+  <!--<a href="index.html">About Me</a>
+  <a href="#">Blog</a>
+  <a href="#">Projects</a>
+  <a href="#">Contact</a>
+-->
+</div>
+
+<div id="navigationLinks">
+   <a href="../index.html">About Me</a>
+  <a href="#">Blog</a>
+  <a href="#">Projects</a>
+  <a href="#">Contact</a>
+  </div>
+</div>
+
+<div id="contentContainer">
+  <div class="container">
+
+  <div class="sidebar">
+<div class="sidebar-title">Blog Posts</div>
+<!--Fill in blog post links here-->
+<ul>
+  <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
+  <li><a href="c1-chefs-kitchen.html">Kitchens and Chefs and Cheating.  Oh My.</a></li>
+  <li><a href="t2-css-design.html">Torturing Mice with CSS.  Because Why Not?</a></li>
+  <li><a href="t3-arrays-hashes.html">Arrays, Hashes, and Fiery Infernos</a></li>
+  <li><a href="c3_thinking-style">Thinking and Changing and Changing your Thinking. With Style!</a></li>
+  <li><a href="t4-enumerable-methods.html">Enumerable#map- A Tool for Just About Anything You Want to Accomplish in Your Array. Even vengeance.</a></li>
+  <li><a href="c4-tech-issues.html">Intrusive Online Ads gone Wrong.  Well, Wrong<em>er</em>.</a></li>
+</ul>
+
+  </div>
+  <div class="post-image"><!--Image goes here--></div>
+  <div class="post-title">Enumerable#map; a tool for just about anything you want to accomplish in your array. Even vengeance.</div>
+  <div class="post-subtitle">"Ma-a-a-a-a-a-a-a-a-a-a-aps"</div>
+  <div class="post-quote-source">-Yeah Yeah Yeahs, Maps</div>
+
+
+  <div class="post-content">
+    <html>
+<body>
+
+<p>
+  The map method for enumerables is so awesome.  I promise.  Check it out.  You have an array like this:
+</p>
+
+<p><pre><code>
+my_array = [1, 2, 3, 4]
+</code></pre></p>
+
+<p>
+Standard array, right?  Nothing special about the numbers inside it.  Let's apply a little map magic to it:
+</p>
+
+<p><pre><code>
+super_sweet_array = my_array.map { |i| "Super sweet!"}
+</code></pre></p>
+
+<p>
+  Check out our new array!
+</p>
+
+<p><pre><code>
+  {"Super sweet!", "Super sweet!", "Super sweet!", "Super sweet!"}
+</code></pre></p>
+
+<p>
+  Well, that's pretty awesome.  But what exactly happened here?  When we call map on an array, we're telling it to iterate through each item of the array, which we're calling i, and then perform the "block" that is included in the brackets, and then return the values in a new array.  In this case, our block simply said to turn i into "Super sweet!"- but we can probably get crazier.  Should we?  Of course, we should!
+</p>
+
+<p><pre><code>
+double_the_fun_array = my_array.map { |i| i * 2 }
+</code></pre></p>
+
+<p>
+  And that gets us....
+</p>
+
+<p>
+  [2, 4, 6, 8]
+</p>
+
+<p>
+  Woot!  Easy doublification!  Just like that!  Can you imaging if you had an array of 30 numbers, and you needed to double them all?  Of course, you could always write your little while loop, but it would be much more efficient to use the map method as we just did.  Now, how about we go crazy extreme:
+  </p>
+
+<p><pre><code>
+  what_in_the_world_array  = my_array.map { |i| (i == 1 ? "what" : i == 2 ? "in" : i == 3 ? "the" : i == 4 ? "world" : i)}
+</code></pre></p>
+
+<p>
+  By throwing in a few, albeit complicated, ternary notations, suddenly our standard array turns into:
+</p>
+
+<p><pre><code>
+["what", "in", "the", "world"]
+</code></pre></p>
+
+<p>
+  When would you ever need to use something like this example?  Probably never, but you can use something similar if you need to replace a particular value of an element in your array.  Say, if you need to change all of your "10:30"s in an array to "11:30"s because your daily schedule has been changed, you can set up a nifty { |i| i == "10:30" ? "11:30" : i } in your block and presto, all of your "10:30"s are now "11:30"s!
+</p>
+
+<p>
+  Seriously, the map method is just too cool.  And if you don't agree, then DEATH BEES FOR YOU!
+</p>
+
+<p><pre><code>
+  DEATH_BEES_FOR_EVERYONE = my_array.map { |i| i < 4 ? "DEATH BEES!" : "DEATH BEES FOR EVERYONE!!!!"}
+  </code></pre></p>
+
+  Well, look at that. I did find a use for it.
+
+  </div>
+    <div class="post-date">January 15, 2014</div>
+
+</div>
+<div id="footer">
+
+
+</div>
+  </div>
+
+</body>
+</html>
+
