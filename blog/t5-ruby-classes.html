@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html lang="en"> 
 
-<head>
-  <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css">
-<title>Mary C Baylis' Blogomania!</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/blocked.css">   
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <title>Mary C Baylis</title>
+  </head>
 
-<div class="header">
-<div id="logo">
-  <!--This is me!  Though I'd prefer a graphical representation... -->
-  <!--<a href="index.html"><img src="http://www.gravatar.com/avatar/b4325c1bc35be23516d21af2103d7b8d?s=200" alt="Profile Picture"/></a>-->
-</div>
+  <body>
+    <div class="header">
+      <div class="header-content">
+        Mary C Baylis
+      </div>
+      <div id="navigation-bar">
+        <a href="#">About Me</a>
+        <a href="#">Blog</a>
+        <a href="#">Projects</a>
+        <A href="#">Contact</a>
+      </div>
+    </div>
 
-<div id="name"></div>
-
-<div id="navigationBar">
-  <!--This is the navigation stuff-->
-  <!--<a href="index.html">About Me</a>
-  <a href="#">Blog</a>
-  <a href="#">Projects</a>
-  <a href="#">Contact</a>
--->
-</div>
-
-<div id="navigationLinks">
-   <a href="../index.html">About Me</a>
-  <a href="#">Blog</a>
-  <a href="#">Projects</a>
-  <a href="#">Contact</a>
-  </div>
-</div>
+    <div class="main">
 
 <div id="contentContainer">
   <div class="container">
 
   <div class="sidebar">
 <div class="sidebar-title">Blog Posts</div>
+<div class="sidebar-content">
 <!--Fill in blog post links here-->
 <ul>
   <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
@@ -51,6 +43,7 @@
   <li><a href="t5-ruby-classes.html">Classy Objectified Babies</a></li>
   <li><a href="c5-feedback.html">Pair Programming and Death Spirals</a></li>
 </ul>
+</div>
 
   </div>
   <div class="post-image"><!--Image goes here--></div>
@@ -63,29 +56,29 @@ I can shake-a my fanny, I can shake-a my can!"</div>
   <div class="post-content">
 
 <p>
-	The world is full of objects.  Apples.  Chairs.  Doorknobs.  Rude People.  All things, good or bad, or very bad, (I'm looking at you, rude people!) are objects.
+  The world is full of objects.  Apples.  Chairs.  Doorknobs.  Rude People.  All things, good or bad, or very bad, (I'm looking at you, rude people!) are objects.
 </p>
 
 <p>
 We can interact with objects and they with us.  Objects have their own characteristics, and some of them can carry out their own tasks.  Apples can be delicious, some chairs can move or rock, doorknobs can turn, and rude people can suck it.  Object-oriented languages, like Ruby, attempt to replicate this interaction by using objects in classes and filling them with things that describe them and things that they can do.  For example, babies.  Babies have characteristics and they can perform actions, so they count as objects.  They can be expressed in Ruby with the following code:
 </p>
 
-	<p><pre><code>
+  <p><pre><code>
 class Baby
 
 end
-	</code></pre></p>
+  </code></pre></p>
 
-	<p>
-		Boom.  We now have a child.  Ruby makes it easy; no labor or anything!  Right now, the kid doesn't do much.  He or she can only perform the very basic functions that he or she inherits as an object in Ruby.  He or she isn't even a he or she yet!  We can fix this by filling in the space between "Class" and "end" with the child's characteristics and actions.
-	</p>
+  <p>
+    Boom.  We now have a child.  Ruby makes it easy; no labor or anything!  Right now, the kid doesn't do much.  He or she can only perform the very basic functions that he or she inherits as an object in Ruby.  He or she isn't even a he or she yet!  We can fix this by filling in the space between "Class" and "end" with the child's characteristics and actions.
+  </p>
 
-	<p>
-		We start with an initialize method that's called when an object is created.  For our new child, it could look something like this:
-	</p>
+  <p>
+    We start with an initialize method that's called when an object is created.  For our new child, it could look something like this:
+  </p>
 
-	<p>
-		<p><pre><code>
+  <p>
+    <p><pre><code>
 class Baby
 
   def initialize(eye_color, hair_color, gender, age)
@@ -96,20 +89,20 @@ class Baby
   end
 
 end
-		</code></pre></p>
-	</p>
+    </code></pre></p>
+  </p>
 
-	<p>
-		That's a lot of initializing going on there!  What we're doing is taking the information that we receive, from the arguments in the method, and setting our instance variables to their value.  The instance variables are general characteristics of that particular instance of the class which any method within that class can access.  So any code that we write telling the baby what it can do will be able to access those variables if it needs to.
-	</p>
+  <p>
+    That's a lot of initializing going on there!  What we're doing is taking the information that we receive, from the arguments in the method, and setting our instance variables to their value.  The instance variables are general characteristics of that particular instance of the class which any method within that class can access.  So any code that we write telling the baby what it can do will be able to access those variables if it needs to.
+  </p>
 
-	<p>
-		Now that we have a kid with physical characteristics, we need to make him or her do something!  Observe:
-	</p>
+  <p>
+    Now that we have a kid with physical characteristics, we need to make him or her do something!  Observe:
+  </p>
 
-	<p>
-			<p>
-		<p><pre><code>
+  <p>
+      <p>
+    <p><pre><code>
 class Baby
 
   def initialize(eye_color, hair_color, gender, age)
@@ -134,16 +127,16 @@ class Baby
   end
 
 end
-		</code></pre></p>
-	</p>
+    </code></pre></p>
+  </p>
 
-	<p>
-		Now our kid can do something! It can cry... Great.  In our cry method, we expect one argument, an integer greater than 1, that corresponds with the amount of crying.  If we look back at our initialize method, this baby is coming out kicking and screaming.  Let's fix the code so we can fix the kid.
-	</p>
+  <p>
+    Now our kid can do something! It can cry... Great.  In our cry method, we expect one argument, an integer greater than 1, that corresponds with the amount of crying.  If we look back at our initialize method, this baby is coming out kicking and screaming.  Let's fix the code so we can fix the kid.
+  </p>
 
-	<p>
-			<p>
-		<p><pre><code>
+  <p>
+      <p>
+    <p><pre><code>
 class Baby
 
   def initialize(eye_color, hair_color, gender, age)
@@ -155,7 +148,7 @@ class Baby
   end
 
   def cry(cry_level)
-    case cry_level			
+    case cry_level      
       when 1
         puts "Wah!"
       when 2
@@ -172,14 +165,14 @@ class Baby
   end
 
 end
-		</code></pre></p>
-	</p>	
+    </code></pre></p>
+  </p>  
 
-	<p>
-		Well, we've started a method to console the baby, but how can we do it?  We don't have any variables that we can access to alter it's crying behavior. The cry_level in our cry method is local and can only be accessed in that method. We're going to need to make a change to our cry method and add an instance variable:
-	</p>
+  <p>
+    Well, we've started a method to console the baby, but how can we do it?  We don't have any variables that we can access to alter it's crying behavior. The cry_level in our cry method is local and can only be accessed in that method. We're going to need to make a change to our cry method and add an instance variable:
+  </p>
 
-		<p><pre><code>
+    <p><pre><code>
 class Baby
 
   def initialize(eye_color, hair_color, gender, age)
@@ -211,15 +204,15 @@ class Baby
   end
 
 end
-		</code></pre></p>
+    </code></pre></p>
 
-		<p>	
-			We've made cry_level an instance variable in our class Baby so that we can at last act on the level of crying and console the child.  Our console method will decrease the level of crying by 1 each time it is called.  Finally!
-		</p>
+    <p> 
+      We've made cry_level an instance variable in our class Baby so that we can at last act on the level of crying and console the child.  Our console method will decrease the level of crying by 1 each time it is called.  Finally!
+    </p>
 
-		<p>
-			Now, I have to try one more thing...
-		</p>
+    <p>
+      Now, I have to try one more thing...
+    </p>
 
 
 <p><pre><code>
@@ -228,7 +221,7 @@ def behave
   @behavior = "angelic"
   sleep(8 hours)
 end
-	</code></pre></p>
+  </code></pre></p>
 
   <p>Yes!  Let's give it a try!</p>
 
@@ -236,10 +229,10 @@ end
     /Users/mbaylis/DBC Assignments/BabyClass/Baby.rb:32:in `behave': uninitialized constant InYourDreams! (GetRealError)
   </code></pre></p>
 
-	*sigh* Well, it was worth a shot.
+  *sigh* Well, it was worth a shot.
 
   </div>
-    <div class="post-date"><!--Date goes here--></div>
+    <div class="post-date">January 23, 2014</div>
 
 </div>
 <div id="footer">

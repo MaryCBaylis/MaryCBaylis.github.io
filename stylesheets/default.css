@@ -1,96 +1,67 @@
 body {
-	/*background-color: gray;*/
-	/*background-color: #ADFFFC;*/
-	/*background-color: #BFFFFA;*/
-	background-image: url("../imgs/birdbar.png");
 	margin: 0px;
-	min-height: 600px;
-}
-
-#wrapper {
-	min-height: 700px;
-	position: relative;
+		background-color: #f4f4f4;
 }
 
 .header {
-	position: absolute;
-	/*width: 100%;
-	margin-right: auto;
-	margin-left: auto;*/
-	left: 10%;
-	right: 10%;
+	background-color: #444444;
+	width: 100%;
+	height: 140px;
+	font-family: Ubuntu;
+	position: relative;
 }
 
-#logo {
-	display: inline-block;
-	height: 200px;
-	width: 200px;
-	border: 2px none gray;
-	border-radius: 100%;
-	background-image: url("http://www.gravatar.com/avatar/b4325c1bc35be23516d21af2103d7b8d?s=200");
-	z-index: 3;
+.header-content {
+	position: absolute;
+	bottom: -20px;
+	font-size: 100px;
+	left: 100px;
+	color: white;
+	text-shadow: 2px 2px #E4DA22;
 }
 
-#name {
-	/*margin: auto;*/
-	display: inline-block;
-	position: absolute;
+#navigation-bar {
+	position: fixed;
+	background-color: #22a3a3;
+	height: 50px;
+	right: 0px;
+	top: 0px;
+	width: 40%;
+	color: #E4DA22;
+	opacity: 0.9;
+  filter: alpha(opacity=90); /* For IE8 and earlier */
+  border-bottom-left-radius: 10px;
+
+}
+
+.main {
+	background-color: #f4f4f4;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#navigation-bar a {
+	position: relative;
+	margin-right: 10px;
+	margin-left:20px;
 	top: 10px;
-	text-align: center;
-	/*font-family: Impact;*/
-	font-size: 40px;
-	width: 600px;
-
-}
-
-/*I have some work to do on my buttons*/
-#navigationBar {
-	display: inline-block;
-	position: absolute;
-	left: 100px;
-	top: 125px;
-	width: 80%;
-	height: 50px;
-	/*background-color: #E2FFCC;*/
-	background-color: #3ED2B6;
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
-	vertical-align: middle;
-	z-index: -1;
-	padding: 10px;
-	border: 2px none gray;
-	border-radius: 10px;
-}
-
-#navigationLinks {
-	display: inline-block;
-	position: absolute;
-	left: 100px;
-	top: 135px;
-	width: 80%;
-	height: 50px;
-	/*background-color: #E2FFCC;*/
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
-	vertical-align: middle;
-	z-index: 1;
-	padding: 10px;
-	/*border: 2px none gray;*/
-	/*border-radius: 10px;*/
-	font-family: 'Ubuntu', sans-serif;
+	color: #E4DA22;
+	text-decoration: none;
+		opacity: 1;
+  filter: alpha(opacity=120); /* For IE8 and earlier */
+    font-size: 20px;
 }
 
 .sidebar {
 	position: relative;
 	float: left;
-	width: 200px;
+	width: 250px;
 	/*margin: 14px;*/
 	left: -100px;
 	background-color: #FFE98F;
 	margin-right: -86px;
-	padding: 10px;
+	padding: 5px;
 	border-radius: 10px;
 }
 
@@ -98,35 +69,16 @@ body {
 	text-align: center;
 }
 
-#footer {
-	/*display: block;*/
-	/*position: relative;*/
-	width: 100%;
-	/*position: fixed;*/
-	/*bottom: 0px;*/
-	/*left: 0px;*/
-	/*margin: auto;*/
-	/*float: bottom;
-	clear: both;
-	*/
-	top: 100%;
-	min-height: 20px;
-	position: relative;
-	position: absolute;
+.sidebar-content {
+	margin-left: -14px;
+	margin-right: 1px;
 }
 
-#contentContainer {
-	position: absolute;
-	background-color: white;
-	/*border: 2px none gray;
-	border-radius: 10px;*/
-	width: 100%;
-	margin:: auto;
-	top: 195px;
-	min-height: 300px;
-	/*left: 100px;*/
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	margin-bottom: 100px;
-	z-index: 2;
+.sidebar-content a {
+	color: #22a3a3;
+	text-decoration: none;
+}
+
+.sidebar-content a.visited {
+	color: #22a322;
 }
