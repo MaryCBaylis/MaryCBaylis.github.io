@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/blocked.css">   
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <title>Mary C Baylis</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-content">
+        Mary C Baylis
+      </div>
+      <div id="navigation-bar">
+        <a href="index.html">About Me</a>
+        <a href="#">Blog</a>
+        <a href="#">Projects</a>
+        <A href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="main">
+
+<div id="contentContainer">
+  <div class="container">
+
+  <div class="sidebar">
+<div class="sidebar-title">Blog Posts</div>
+<div class="sidebar-content">
+<!--Fill in blog post links here-->
+<ul>
+  <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
+  <li><a href="c1-chefs-kitchen.html">Kitchens and Chefs and Cheating.  Oh My.</a></li>
+  <li><a href="t2-css-design.html">Torturing Mice with CSS.  Because Why Not?</a></li>
+  <li><a href="t3-arrays-hashes.html">Arrays, Hashes, and Fiery Infernos</a></li>
+  <li><a href="c3_thinking-style.html">Thinking and Changing and Changing your Thinking. With Style!</a></li>
+  <li><a href="t4-enumerable-methods.html">Enumerable#map- A Tool for Just About Anything You Want to Accomplish in Your Array. Even vengeance.</a></li>
+  <li><a href="c4-tech-issues.html">Intrusive Online Ads gone Wrong.  Well, Wrong<em>er</em>.</a></li>
+  <li><a href="t5-ruby-classes.html">Classy Objectified Babies</a></li>
+  <li><a href="c5-feedback.html">Pair Programming and Death Spirals</a></li>
+  <li><a href="t6-oop-concepts.html">Blocks, Procs, Lambdas, and Charcoal</a></li>
+  <li><a href="c6-stereotype-threat.html">Stereotype Threat.  It Doesn't Have to Be.</a></li>
+</ul>
+</div>
+
+  </div>
+  <div class="post-image"><!--Image goes here--></div>
+  <div class="post-title">Blocks, Procs, Lambdas, and Charcoal</div>
+  <div class="post-subtitle">“I have trouble with toast. Toast is very difficult. You have to watch it all the time or it burns up.”</div>
+  <div class="post-quote-source">-Julia Child</div>
+
+
+  <div class="post-content">
+<p>
+  Blocks, procs, and Lambdas.  Yikes.  That's a moutful. Almost sounds like magical incantations.  Digging a little deeper can take some of the mystery out of them, though.  By the way, I'm hungry for toast, so humor me in my examples today.
+</p>
+
+<p>
+  Let's start at the very beginning with blocks.  Blocks are literally blocks of code that almost every Ruby programmer uses, particularly when iterating over a member of the Collection class, like Arrays or Hashes.  Let's make ourselves a 2d array to play with and see what fun we turn out.  Since we're going with a toast theme, we'll make an array that mimics a loaf of bread, labelling each piece of bread with it's "bread status" and level-of-doneness.  Observe:
+</p>
+
+<p><pre><code>
+  loaf_of_bread = [ ["bread", "uncooked"], ["bread", "uncooked"], ["bread", "uncooked"] ]
+  </code></pre></p>
+
+
+  <p>
+    Small loaf, I know.  But the array is not the point here!  Onto the actual point, blocks!  A block is a group of one or more method calls or code that is inserted in another method as a parameter.  As I mentioned earlier, they're particularly useful when dealing with arrays since you can act on each element in the array with whatever code you can dream up easily with a single iteration.  In our toast example, we can insert each piece of bread in an object Toaster with the following code:
+  </p>
+
+  <p><pre><code>
+    toaster = Toaster.new
+    loaf_of_bread.each { |b| toaster.insert(b) }
+  </code></pre></p>
+
+  <p>
+    The block in this code snippet is the "toaster.insert(b)" part.  (This of course assumes our toaster can accept an array describing the piece of bread in it's insert method!) The block is inserted as a parameter in each call and is executed for each element <em>b</em> of our array, loaf_of_bread.
+  </p>
+
+  <p>
+    Now imagine if we could store that block in a variable and call it up anytime we needed it without having to type it all out.  It might not be such a big deal for such a short method call, but it can come in handy for longer calls.  Well, boys and girls, we can!  And those are what we call Procs, short for procedures.
+  </p>
+
+  <p>
+    If we have a method from our toaster class called "cook," that'll change the level-of-doneness for our bread, (I told you that hash would come into play later!) we can practice using our procs by instantiating it with the following code:
+  </p>
+
+  <p><pre><code>
+    cook = Proc.new {|b| toaster.cook(b) }
+  </code></pre></p>
+
+  <p>
+    First, we're setting up the proc with a variable inside the bars (and it turns out you can get really fancy by entering plenty of variables in various ways, but for the sake of simplicity we're sticking to one here.)  Then, we tell the proc what action it should take on the variable it accepts.  To call the proc, we do the following:
+  </p>
+
+  <p><pre><code>
+    loaf_of-bread.each do |b|
+      cook.call(b)
+    end
+  </code></pre></p>
+
+  <p>
+    In this example, we have both a proc inside our block!  The block is the method call that is entered as the parameter in our call to the array's each.  The proc is the "cook.call(b)" method that has "toaster.cook(b)" stored in it.  Assuming cook raises our level of doneness up one in our hash and updates the bread status, we can assume our loaf_of_bread array now looks like this:
+  </p>
+
+  <p><pre><code>
+    loaf_of_bread.to_s
+  </code></pre></p>
+
+  <p><pre><code>
+    [ ["toast", "lightly toasted"], ["toast", "lightly toasted"], ["toast", "lightly toasted"] ] 
+  </code></pre></p>
+
+  <p>
+    Mmm... it's almost done!  But we need to move onto our next point: lambdas.  Lambdas are actually very similar to procs, except they're a lot pickier about the number of arguments they accept.  For our proc, if we had defined further variables that it could accept but failed to provide them, the proc would automatically fill in the blanks for you with nil objects.  How considerate!  Lambdas, though, are cranky old men who will complain if you don't provide the exact number of parameters they're expecting.  The biggest way that lambdas differ from procs, though, is how they handle returns. Onto the next example!
+  </p>
+
+  <p>
+    Lambdas are saved little pieces of code, like procs, except they treat the piece of code like a method call and not as a piece of the method itself.  This can be demonstrated when dealing with return statements.  Watch what happens when we include a return in a proc:
+  </p>
+
+  <p><pre><code>
+    cook_more = Proc.new{ |b| return toaster.cook(b) }
+  </code></pre></p>
+
+  <p>
+    In this example, we're assuming toaster.cook returns something, say the new state of the bread and it's level od doneness.  When we put it in a block, like this:
+  </p>
+
+  <p><pre><code>
+    loaf_of_bread.each do |b|
+      cook_more.call(b)
+      puts "This toast is delicious!  It'd be shame to cook it any more!"
+      return toaster.cook(b)
+    end
+  </code></pre></p>
+
+  <p>
+    Fortunately, assuming the sub-array is returned in the first call, we get this:
+  </p>
+
+  <p><pre><code>
+    ["toast", "golden perfection"]
+  </code></pre></p>
+
+  <p>
+    What's going on that our level-of-doneness only advanced one level, even though we called cook twice, once through our proc and another time through the block?  Well, our proc returned the first element, therefore exiting the method, as if it were a piece of the method itself.  Anything written after the proc will not be executed, saving the toast.  Using the lambda, however...
+  </p>
+
+  <p><pre><code>
+    cook_more = lambda { |b| return toaster.cook(b) }
+  </code></pre></cook>
+
+  <p>
+    Let's see what our block does now that cook_more is a lambda and not a proc:
+  </p>
+
+  </p><pre></code>
+    loaf_of_bread.each do |b|
+      cook_more.call(b)
+      return toaster.cook(b)
+    end
+  </code></pre></p>
+
+  <p>
+    And we get....
+  </p>
+
+  <p><pre><code>
+    ["useless lump of charcoal", "burnt to hell"]
+  </code></pre></pr>
+
+  <p>
+    Goshdarnit lambda!  Every %^&$%$ time!  *sigh*  Who's up for bagels?
+  </p>
+
+  </div>
+    <div class="post-date">January 30, 2015</div>
+
+</div>
+<div id="footer">
+
+
+</div>
+  </div>
+
+</body>
+</html>
+
