@@ -104,7 +104,7 @@
   </code></pre></p>
 
   <p>
-    In this example, we have both a proc inside our block!  The block is the method call that is entered as the parameter in our call to the array's each.  The proc is the "cook.call(b)" method that has "toaster.cook(b)" stored in it.  Assuming cook raises our level of doneness up one in our hash and updates the bread status, we can assume our loaf_of_bread array now looks like this:
+    In this example, we have both a block and a proc, inside our block!  The block is the method call that is entered as the parameter in our call to the array's each.  The proc is the "cook.call(b)" method that has "toaster.cook(b)" stored in it.  Assuming cook raises our level of doneness up one in our loaf_of_bread hash and updates the bread status, we can assume our loaf_of_bread array now looks like this:
   </p>
 
   <p><pre><code>
@@ -128,7 +128,7 @@
   </code></pre></p>
 
   <p>
-    In this example, we're assuming toaster.cook returns something, say the new state of the bread and it's level od doneness.  When we put it in a block, like this:
+    In this example, we're assuming toaster.cook returns something, say the new state of the bread and it's level of doneness.  When we put it in a block, like this:
   </p>
 
   <p><pre><code>
