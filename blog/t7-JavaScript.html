@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/blocked.css">   
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <title>Mary C Baylis</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-content">
+        Mary C Baylis
+      </div>
+      <div id="navigation-bar">
+        <a href="../index.html">About Me</a>
+        <a href="#">Blog</a>
+        <a href="#">Projects</a>
+        <A href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="main">
+
+<div id="contentContainer">
+  <div class="container">
+
+  <div class="sidebar">
+<div class="sidebar-title">Blog Posts</div>
+<div class="sidebar-content">
+<!--Fill in blog post links here-->
+<ul>
+  <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
+  <li><a href="c1-chefs-kitchen.html">Kitchens and Chefs and Cheating.  Oh My.</a></li>
+  <li><a href="t2-css-design.html">Torturing Mice with CSS.  Because Why Not?</a></li>
+  <li><a href="t3-arrays-hashes.html">Arrays, Hashes, and Fiery Infernos</a></li>
+  <li><a href="c3_thinking-style.html">Thinking and Changing and Changing your Thinking. With Style!</a></li>
+  <li><a href="t4-enumerable-methods.html">Enumerable#map- A Tool for Just About Anything You Want to Accomplish in Your Array. Even vengeance.</a></li>
+  <li><a href="c4-tech-issues.html">Intrusive Online Ads gone Wrong.  Well, Wrong<em>er</em>.</a></li>
+  <li><a href="t5-ruby-classes.html">Classy Objectified Babies</a></li>
+  <li><a href="c5-feedback.html">Pair Programming and Death Spirals</a></li>
+  <li><a href="t6-oop-concepts.html">Blocks, Procs, Lambdas, and Charcoal</a></li>
+  <li><a href="c6-stereotype-threat.html">Stereotype Threat.  It Doesn't Have to Be.</a></li>
+  <li><a href="t7-JavaScript.html">Object/Hash Madness in JavaScript</a></li>
+  <li><a href="c7-values.html">The Value of Values. And Outer Space.</a></li>
+</ul>
+</div>
+
+  </div>
+  <div class="post-image"><!--Image goes here--></div>
+  <div class="post-title">Object/Hash Madness in JavaScript</div>
+  <div class="post-subtitle">"Insanity is often the logic of an accurate mind overtasked."</div>
+  <div class="post-quote-source">-Oliver Wendell Holmes, Sr.</div>
+
+
+  <div class="post-content">
+
+<p>
+  The differences between JavaScript and Ruby.  Hoo boy, where to start.
+</p>
+
+<p>
+  I've worked mostly with Java/C++ during my developing days, so when it came time to learn Ruby, I was a little bit thrown.  Why aren't we declaring what our variables are??  Wait, don't you need a few more lines to start a class?  How do we know what a method returns if we don't declare what types our variables are and we never declare the return type in the method?  THIS IS UTTER CHAOS!
+</p>
+
+<p>
+  When it was time to start with JavaScript, I wanted to run back screaming into Ruby's waiting arms.  This was chaos to a whole new level.  It looked like a procedural oriented language that was hacked into a facsimile of an object-oriented language.  I mean, just look at their objects:
+</p>
+
+<p><pre><code>
+  var newObject = {
+  param1: "something",
+  param2: 2
+}
+  </code></pre></p>
+
+  <p>
+    Granted, that's an "object literal" which leads to a whole other discussion.  (There are several ways to declare an object in JavaScript, and they have different implications on your code.  The object literal is great for quickly declaring one instance of an object, but for more traditional object creation, it seems to me to be best to go with the prototyping method.  Then you can make several instances that all inherit the objects traits and methods.  It makes it more "Java Script" than JavaScript, which is an improvement, in my opinion.  Anyways... back to the object literal!)
+  </p>
+
+  <p>
+    If you study the way the object literal is declared, you'll notice right away it has the "var" in front of it, as if it were a variable.  Which, in a way, it is, in JavaScript.  You can add and remove parameters, called properties in JavaScript, mid-program.  That's just crazy-talk!  If you look at it a little more closely, though, you Ruby developers will see it looks awfully familiar...
+  </p>
+
+  <p><pre><code>
+    hash = {
+    param1 => "something",
+    param2 => 2
+  }
+  </code></pre></p>
+
+  <p>
+    JavaScript objects are essentially hashes in Ruby.  In Ruby, you set up hashes with keys and their associated values.  In JavaScript, your objects have parameters, and their associated values.  Incidentally, in JavaScript, a method can be a value, so you can set up your method name as a parameter, and then define the method in it's value.  Tada!  Your JavaScript object now has a method.  It's a weird way to do it, in my opinion, but I'm still new to all of this stuff.  In Ruby, methods are created the good old fashioned object-oriented way, within a class.  Clearly defined.  Uphills, both ways.
+  </p>
+
+  <p>
+    Also, as mentioned earlier, you can add and remove parameters from JavaScripts objects mid-program, just as you can remove key-value pairs from a Ruby hash.  Which means, you can add and remove methods from your object, willy-nilly.  This seemed way crazy insecure to me until I stopped to think what JavaScript could be used for.
+  </p>
+
+  <p>
+    A lot of what I have seen and heard of JavaScript points to it's usefulness in manipulating DOM objects, on web pages.  It may be handy to have dynamic "objects" in response to events that users trigger on a webpage.  For instance, in a game setting; a character just starting out can only use certain items or move-sets, then, as they level up, they open up more possibilities, which can be expressed in JavaScript by adding methods to their hash.  Oops. I mean, object, of course. (Face it, they are pretty much just hashes hacked into objects.  We're onto to you, JavaScript!)
+  </p>
+
+  <p>
+    So while the transition is rough, it's actually been pretty satisfying learning a whole new way to look at programming and program designs.  Even among object-oriented languages, there can be some vast differences.  Even if they are just calling something from one language something else, the way the object/hashes are implemented in JavaScript do allow for some unique techniques.
+  </p>
+
+  <p>
+    They're both insane languages compared to Java, though.  Just different degrees of insane.  But in a way, that's good.  At least we have some options to our insanity.
+  </p>
+
+  </div>
+    <div class="post-date">February 6, 2015</div>
+
+</div>
+<div id="footer">
+
+
+</div>
+  </div>
+
+</body>
+</html>
+
