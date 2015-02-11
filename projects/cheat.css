@@ -1,0 +1,68 @@
+.cheatbox {
+  border-style: outset;
+  border-width: 10px;
+  border-radius: 7px;
+  text-align: center;
+  font-family: "Courier" h1;
+    font-family-font-weight: bold;
+    font-family-font-size: 24px; }
+  .cheatbox h2 {
+    font-weight: bold;
+    font-size: 20px; }
+  .cheatbox p {
+    font-size: 14px; }
+  .cheatbox .summary {
+    font-weight: bold; }
+
+.header {
+  width: 100%;
+  margin: auto; }
+
+.wrapper {
+  width: 100%; }
+
+.left {
+  float: left;
+  width: 50%; }
+
+.right {
+  float: right;
+  width: 50%; }
+
+body {
+  margin: 0px;
+  padding: 0px; }
+
+.redbox {
+  border-color: #FD0018;
+  background-color: #F7D1D8; }
+  .redbox .summary {
+    text-shadow: 0 0 3px #FD0018; }
+
+.orangebox {
+  border-color: #FF7400;
+  background-color: #FFE9B7; }
+  .orangebox .summary {
+    text-shadow: 0 0 3px #FF7400; }
+
+.bluebox {
+  border-color: #1448C1;
+  background-color: #CAD7F4; }
+  .bluebox .summary {
+    text-shadow: 0 0 3px #1448C1; }
+
+.greenbox {
+  border-color: #00D400;
+  background-color: #D8F0D8; }
+  .greenbox .summary {
+    text-shadow: 0 0 3px #00D400; }
+
+.purplebox {
+  border-color: #DB0099;
+  background-color: #FBC0E9; }
+  .purplebox .summary {
+    text-shadow: 0 0 3px #DB0099; }
+
+.graybox {
+  border-color: #878787;
+  background-color: #F4F4F4; }
