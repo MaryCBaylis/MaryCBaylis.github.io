@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog-stylesheet.css"> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/blocked.css">   
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <title>Mary C Baylis</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-content">
+        Mary C Baylis
+      </div>
+      <div id="navigation-bar">
+        <a href="../index.html">About Me</a>
+        <a href="#">Blog</a>
+        <a href="#">Projects</a>
+        <A href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="main">
+
+<div id="contentContainer">
+  <div class="container">
+
+  <div class="sidebar">
+<div class="sidebar-title">Blog Posts</div>
+<div class="sidebar-content">
+<!--Fill in blog post links here-->
+<ul>
+  <li><a href="t1-git-blog.html">What's To Get About Git?  Why Voltron, Of Course!</a></li>
+  <li><a href="c1-chefs-kitchen.html">Kitchens and Chefs and Cheating.  Oh My.</a></li>
+  <li><a href="t2-css-design.html">Torturing Mice with CSS.  Because Why Not?</a></li>
+  <li><a href="t3-arrays-hashes.html">Arrays, Hashes, and Fiery Infernos</a></li>
+  <li><a href="c3_thinking-style.html">Thinking and Changing and Changing your Thinking. With Style!</a></li>
+  <li><a href="t4-enumerable-methods.html">Enumerable#map- A Tool for Just About Anything You Want to Accomplish in Your Array. Even vengeance.</a></li>
+  <li><a href="c4-tech-issues.html">Intrusive Online Ads gone Wrong.  Well, Wrong<em>er</em>.</a></li>
+  <li><a href="t5-ruby-classes.html">Classy Objectified Babies</a></li>
+  <li><a href="c5-feedback.html">Pair Programming and Death Spirals</a></li>
+  <li><a href="t6-oop-concepts.html">Blocks, Procs, Lambdas, and Charcoal</a></li>
+  <li><a href="c6-stereotype-threat.html">Stereotype Threat.  It Doesn't Have to Be.</a></li>
+  <li><a href="t7-JavaScript.html">Object/Hash Madness in JavaScript</a></li>
+  <li><a href="c7-values.html">The Value of Values. And Outer Space.</a></li>
+  <li><a href="t8-tech.html"><"The Saving Power of Recursion"</a></li>
+  <li><a href="c8-conflict.html">"Breaking Down Conflict: the Borg Edition"</a></li>
+</ul>
+</div>
+
+  </div>
+  <div class="post-image"><!--Image goes here--></div>
+  <div class="post-title">The Saving Power of Recursion</div>
+  <div class="post-subtitle">"Well here we are again.  It's always such a pleasure."</div>
+  <div class="post-quote-source">-GLaDOS, Portal 2</div>
+
+
+  <div class="post-content">
+
+<p>
+    Hello, friends.  I'd like to talk to you about something near and dear to my heart.  Have you found recursion?
+  </p>
+
+  <p>
+    Now, recursion is nothing to fear.  It's actually a neat trick that can make for some clean code.  Instead of ugly loops that can take several lines, you just make a neat little call to your own method within itself with one line.
+  </p>
+
+  <p>
+    For example, we're all familiar with the printing a triangle example.  The one where you make a method that prints out a triangle of symbols, like asterisks, like this:
+  </p>
+
+  <p><pre><code>
+    *
+    **
+    ***
+    ****
+    *****
+  </code></pre></p>
+
+  <p>
+    We can approach this method two ways.  The first way is with a loop.  Observe:
+  </p>
+
+  <p><pre><code>
+def print_triangle(rows)
+  count = 0
+  while count < rows
+    count2 = 0
+    while count2 <= count
+      print "*"
+      count2 += 1
+    end
+    count += 1
+    puts
+  end
+end
+</code></pre></p>
+
+  <p>
+    No offense, code, but you're looking kind of chubby there.  And the two very similar variables that have very similar tasks can be kind of confusing.  We can cut down on the loops by doing the following:
+  </p>
+
+  <p><pre><code>
+def print_triangle(rows)
+  if rows > 0
+    print_triangle(rows-1)
+    rows.times do 
+      print "*"
+    end
+    puts
+  end
+end
+  </code></pre></p>
+
+  <p>
+    What is this code doing?  First, it checks if our input is greater than 0.  If it is, that means we still have something to print, and that means we have to call our method again with an argument that is one less than our previous one.  We'll continue this cycle until we reach zero, at which point, nothing happens in the current method, it just ends.  Once that ends, though, the focus returns to where the all of the previous method calls left off, starting with the most recent.  In this case, the most recent call was to print_triangle(1).  Following the single loop, that will cause 1 * to be printed, followed by a new line.  Next, print_triangle(2) will be called, which will cause the loop to print * twice, followed by a new line, and so on.
+  </p>
+
+  <p>
+    But that seems needlessly complex for such a small method, doesn't it?  Just a parlour trick?  Maybe in this case.  But you have to admit, it's pretty cool.
+  </p>
+
+  <p>
+    Then when can we use recursion?  And when should we?
+  </p>
+
+  <p>
+    We can use recursion whenever we have a problem that can be broken down into similar incrementally smaller problems.  Like in our print_triangle example.  We needed to print increasingly smaller lines.  We accomplished that by first establishing the base case, which is VERY IMPORTANT.  Without the base case, your recursion will go on forever.  In this example, the base case was 0, because there were no more asterisks to be printed at that point.
+  </p>
+
+  <p>
+    Ok, so that's when we <strong>can</strong> use it.  When <strong>should</strong> we use it??
+  </p>
+
+  <p>
+    It should be used when it can cut down on the time your code needs to run significantly.  This happens most famously in the case of exponents.  Let's say you need to make a method that takes in two numbers; one number as the base, and the other as the exponent.  We can do it the old-fashioned-loop way like this:
+  </p>
+
+<p><pre><code>
+def power(base, exponent)
+  count = 0
+  result = 1
+  while count < exponent
+    result = base * result
+    count += 1
+  end
+  return result
+end
+</code></pre></pr>
+
+<p>
+  What's wrong with this block of code?  Technically, it does what we expect it to do.  A call to power(2,2) returns 4 in 0.1 seconds.  A call to power(2,3) returns 8 in 0.1 seconds.  A call to power(2,200000) returns an incredibly high number after 2.8 seconds.  A call to power(2,2000000) makes my computer give up.  Too bad, it would have been a long time.  But those 2000000 loops made it's head explode.  It can only do so much. You know, sometimes you just need a high exponent, and when you do, what can you do? 
+  </p>
+
+  <p>
+    Let's apply some recursion to this bad boy.  It's pretty obvious that this problem can be broken down.  power(2,3) is saying multiply 2 by itself 3 times.  We can break it down in one of two ways.  First, for demonstration purposes, we'll break it down one by one with the following:
+  </p>
+
+  <p><pre><code>
+  def power(base, exponent)
+    result = 1
+    if exponent >= 1
+      result = base * power(base, exponent-1)
+    end
+    return result
+  end   
+  </code></pre></p>
+
+  <p>
+    Hmmm... Technically, it works, but it's only a little shorter than the first attempt.  But it's still the same number of loops.  Testing gives us power(2,3) is 8 in 0.1 seconds.  Uh-oh. Testing power(2,200000) tells me my stack level is too deep, meaning my computer's head blew up again.
+  </p>
+
+  <p>
+    And what exactly was the point of that?  To show you that recursion doesn't automatically make things faster.  Not only did we have the same number of loops for the code to iterate through, we also made the computer go through the trouble of instatiating the method object each time.  Ouch.  Poor thing.
+  </p>
+
+  <p>
+    So what is a person who needs a large exponent to do?  Well, recursion really is the answer, we just need to use the most effective kind.  The kind where we cut the loops down by half each time we call our method again.  In our previous method, we only decremented our exponent by 1.  Keep in mind everything you know about exponents and watch this magic:
+  </p>
+
+  <p><pre><code>
+  def power(base, exponent)
+    result = base
+    if exponent > 1
+      if exponent % 2 == 0
+        result = power(base, (exponent)/2) * power(base, (exponent)/2)
+      else
+        result = base * power(base, (exponent-1)/2) * power(base, (exponent-1)/2)
+      end
+    end
+    return result
+  end
+  </code></pre></p>
+
+  <p>
+    Now what is this code doing? Knowing what we know about exponents, 2<span class ="superscript">4</span> can be broken down into 2² * 2².  2<span class ="superscript">6</span> can be broken down into 2³ * 2³.  We take advantage of that, and use recursion to find the answer of half of the exponent, and mulitply that times itself.  (Note that in the event of an odd exponent, we have to multiply the result times the base one more time.)  
+  </p>
+
+<p>
+  That's all well and good, but does it work?  A call to power(2,3) returns 8 in 0.1 seconds.  A call to power(2,200000) returns a veeeeery large number in 0.2 seconds.  And a call to power(2,2000000) returns...... a very successfully large number in 5.2 seconds.  We did it!  We got the computer to compute a very large value without exploding after too many iterations!
+</p>
+
+<p>
+  So to recap, recursion can be used when your problem can be broken up into incrementally smaller mini-problems with the exact same type of input, and you <strong>have</strong> to remember to always set a base case to break the cycle.  Also, if you can cut your base values by half, it is very very very worth it to use recursion.  Otherwise, it's just a cool trick that's just as good as looping.  But still cool!
+  </p>
+
+  <p>
+    Wow.  It just now returned a call to power(2,20000000) in 156.8 seconds. Not bad for a call that killed my computer with the two previous implementations. Also, it took me that long to write that last paragraph.
+  </p>
+
+  <p>
+    Anyways... So welcome recursion into your heart.  It can save your computer from the eternal flames of crashing from too many iterations.
+  </p>
+
+  </div>
+    <div class="post-date">February 10, 2015</div>
+
+</div>
+<div id="footer">
+
+
+</div>
+  </div>
+
+</body>
+</html>
+

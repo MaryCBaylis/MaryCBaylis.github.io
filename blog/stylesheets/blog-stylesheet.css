@@ -54,5 +54,11 @@
 	font-size: 12px;
 }
 
+.superscript { 
+	position: relative; 
+	top: -0.3em; 
+	font-size: 80%; 
+}
+
 
 
